@@ -1,3 +1,6 @@
-tiny_mnist/
-kh_char_test.csv
-kh_char_train.csv
+# Ignore everything in TP5_group1
+TP5_group1/*
+
+# Except these
+!TP5_group1/ANN.ipynb
+!TP5_group1/Machine_Learning_TP_5_2025_2026_.pdf
