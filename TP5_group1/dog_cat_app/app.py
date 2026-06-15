@@ -31,7 +31,10 @@ def my_ANN_eval(X, weights):
 
 @st.cache_resource
 def load_model_data():
-    model_path = 'model_data.pt'
+    # Get the directory of the current script
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(current_dir, 'model_data.pt')
+    
     if not os.path.exists(model_path):
         return None
 
