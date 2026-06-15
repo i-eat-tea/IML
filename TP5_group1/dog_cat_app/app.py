@@ -119,7 +119,6 @@ else:
             with col2:
                 label = "Dog" if prediction == 1 else "Cat"
                 st.metric("Prediction", label)
-                st.metric("Confidence", f"{confidence:.2%}")
 
                 if prediction == 1:
                     st.write("🐶 Woof! It's a dog.")
