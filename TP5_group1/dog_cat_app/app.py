@@ -132,6 +132,9 @@ st.divider()
 st.subheader("👥 Project Creators")
 cols = st.columns(4)
 
+# Get the directory of the current script to find images
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
 creators = [
     {"name": "NUON CHANVATHANA", "img": "e20230118.jpg"},
     {"name": "LY LAISRUN", "img": "image.png"},
@@ -141,10 +144,11 @@ creators = [
 
 for col, creator in zip(cols, creators):
     with col:
-        if os.path.exists(creator["img"]):
-            st.image(creator["img"], use_container_width=True)
+        img_path = os.path.join(current_dir, creator["img"])
+        if os.path.exists(img_path):
+            st.image(img_path, use_container_width=True)
         else:
-            st.warning(f"Image not found: {creator['img']}")
+            st.warning(f"Not found: {creator['img']}")
         st.caption(f"**{creator['name']}**")
 
 st.divider()
